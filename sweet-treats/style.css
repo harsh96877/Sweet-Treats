@@ -1,0 +1,329 @@
+/* style.css */
+
+/* Base Setup */
+:root {
+  --primary: #ff6f61;
+  --secondary: #ffb347;
+  --light-bg: #fff8f0;
+  --dark-bg: #333;
+  --white: #fff;
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader .spinner {
+  border: 5px solid #f3f3f3; /* Light gray */
+  border-top: 5px solid var(--primary); /* Red */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+body.dark-mode header {
+  background: linear-gradient(90deg, #ff6f61, #ffb347);
+}
+
+body.dark-mode .hero {
+  background: #444;
+}
+
+body.dark-mode footer {
+  background: #444;
+}
+
+body.dark-mode nav a {
+  color: #fff;
+}
+
+body.dark-mode table {
+  background-color: #555;
+}
+
+body.dark-mode th {
+  background-color: var(--primary);
+}
+
+/* Button Style for Dark Mode */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #e4554a;
+}
+
+/* Page Transitions */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  animation: slideIn 0.8s ease-out;
+  box-shadow: var(--shadow);
+}
+
+
+/* Base Setup */
+:root {
+  --primary: #ff6f61;
+  --secondary: #ffb347;
+  --light-bg: #fff8f0;
+  --white: #fff;
+  --text-dark: #333;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  animation: slideIn 0.8s ease-out;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+nav a {
+  color: var(--white);
+  margin: 0 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Main */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+/* Form */
+form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 2rem auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+input[type="submit"] {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: #e4554a;
+}
+
+/* Dashboard Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+
+th {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  word-break: break-word;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  border-top: 4px solid var(--primary);
+  animation: fadeIn 1s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  form, .hero, table {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+  }
+}
